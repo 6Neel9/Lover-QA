@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: url('ok.jpg') center/cover; /* Set background image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #questionBox {
+            background-color: rgba(255, 182, 193, 0.9); /* Light pink background for the dialogue box */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            position: absolute;
+            color: #333; /* Dark text color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+        }
+
+        #questionBox h2 {
+            color:rgb(218, 78, 101); /* Dark red for the question text */
+        }
+
+        #questionBox button {
+            background-color: rgb(208, 87, 107); /* Dark red background for the buttons */
+            color: white; /* White text color */
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+    <title>Traveler's Question</title>
+</head>
+<body>
+
+<div id="questionBox">
+    <h2>Will you go out with me?</h2>
+    <button onclick="answer('yes')">Yes</button>
+    <button onclick="answer('no')">No</button>
+</div>
+
+<script>
+    function answer(response) {
+        if (response === 'no') {
+            // Change position and display the question box again
+            document.getElementById('questionBox').style.left = Math.random() * (window.innerWidth - 200) + 'px';
+            document.getElementById('questionBox').style.top = Math.random() * (window.innerHeight - 200) + 'px';
+        } else if (response === 'yes') {
+            // Display a romantic message
+            alert('You make my heart flutter! Call me anytime :)');
+        }
+    }
+</script>
+
+</body>
+</html>
